@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="textInputExample">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Permutations with Keypad</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="app.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container" ng-controller="ExampleController">
+        <div class="row">
+            <div class="col col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                <form role="form">
+                    <h1>Permutation using the phone keypad</h1>
+                    <p>
+                        <input class="digitInput form-control" type="text" data-ng-model="nineDigits" maxlength="10" ng-pattern="/^(\d)+$/"  placeholder="Enter numbers/digits here or use the keypad below" />
+                    </p>
+                    <div class="keypad" data-ng-model="keypad">
+                        <ul>
+                            <li ng-repeat="(key,value) in phone" ng-click="getKeyDown($event)"><span class="number-value">{{key}}</span><span class="letter-value">{{value}}</span></li>
+                        </ul>
+                    </div>
+                    <p><strong>Phone number</strong> : <span class="phoneFormat"></span>{{nineDigits | tel}}</p>
+
+                    <p><strong>Permutation count</strong> : <span class="arryCounter"></span></p>
+                    <p><strong>Permutation Array</strong> : <span class="arrayPermutation"></span></p>
+                    <my-output class="form-group">
+                        <textarea type="text" class="combResults form-control" rows="10" cols="20" placeholder="Results"></textarea>
+                    </my-output>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
