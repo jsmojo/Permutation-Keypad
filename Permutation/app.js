@@ -37,18 +37,23 @@ angular.module('textInputExample', [])
             ];
             scope.phone = numValues;
             scope.getKeyDown = function (event, key, value) {
-                if (this.value != '') {
+                console.log(event.target);
+                console.log(event.currentTarget);
+                if (this.value != '' && scope.nineDigits.length <= 8) {
                     console.log(this.value);
                     var randomColor = backgroundColorValues[Math.floor(Math.random() * backgroundColorValues.length)];
-                    $(event.target).parent().css({
-                        'background-color': '#' + randomColor,
-                        'transition': 'background-color .5s'
-                    }).delay(500).queue(function () {
-                        $(event.target).parent().css({
-                            'background-color': '',
-                            'transition': 'background-color .5s'
-                        });
-                    });
+                    var _ = event.currentTarget;
+                    (function (_) {
+                        setTimeout(function () {
+                            $(_).css({
+                                'background-color': '#' + randomColor });
+                        }, Math.floor(100));
+                        setTimeout(function () {
+                            $(_).css({
+                                'background-color': ''
+                            });
+                        }, Math.floor(300));
+                    })(_);
                     scope.nineDigits += this.key;
                 }
             };

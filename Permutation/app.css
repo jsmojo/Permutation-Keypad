@@ -15,13 +15,19 @@
     height: 65px;
     text-align: center;
     cursor: pointer;
+    vertical-align: top;
 }
+.keypad ul li.active {
+    background: gray;
+    color: white;
+}
+
 
 .keypad ul li span {
     display: block;
 }
 
-.num {
+.number-value {
     font-size: 2em;
 }
 
@@ -30,7 +36,3 @@
     margin-top: -5px;
 }
 
-.keypad ul li.active {
-    background: gray;
-    color: white;
-}
