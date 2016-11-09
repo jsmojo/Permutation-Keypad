@@ -56,7 +56,7 @@ angular.module('textInputExample', [])
                                 $(_).css({
                                     'background-color': ''
                                 });
-                            }, Math.floor(300));
+                            }, Math.floor(300)); 
                         })(_);
 
                         scope.nineDigits += this.key; 
