@@ -8,7 +8,7 @@ $ git clone https://github.com/jsmojo/Permutation-Keypad/
 ```
 
 ```
-Open Permutation.snl in your Visual Studio IDE
+Open Permutation.sln in your Visual Studio IDE
 ```
 
 
